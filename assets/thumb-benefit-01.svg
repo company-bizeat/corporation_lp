@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="84" viewBox="0 0 150 84" role="img" aria-label="">
+  <!-- 値札の形。文字は「10%〜35% OFF」で、矢印より手前の四角い部分（x 8〜118）に収める。
+       雛形の「¥0」の絵は飲食店向け（掲載料0円）のため差し替え。02・03と同じ 150×84 の比率 -->
+  <path d="M8 14 h110 l26 28 -26 28 h-110 a8 8 0 0 1 -8 -8 v-40 a8 8 0 0 1 8 -8 z" fill="#2c6e49"/>
+  <text x="63" y="41" font-family="Noto Sans JP, Hiragino Sans, sans-serif" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">10%〜35%</text>
+  <text x="63" y="60" font-family="Noto Sans JP, Hiragino Sans, sans-serif" font-size="13" font-weight="700" fill="#dbf1e0" text-anchor="middle" letter-spacing="2">OFF</text>
+</svg>

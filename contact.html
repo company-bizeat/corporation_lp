@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>導入のご相談・お問い合わせ | BizEat 法人向け</title>
+<meta name="description" content="BizEat（法人向け会食DXプラットフォーム）の導入のご相談・サービスのご質問・資料のご請求は、こちらのフォームから承ります。">
+<link rel="canonical" href="https://corporate.bizeat.jp/contact.html">
+<link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BizEat">
+<meta property="og:title" content="導入のご相談・お問い合わせ | BizEat 法人向け">
+<meta property="og:description" content="BizEat（法人向け会食DXプラットフォーム）の導入のご相談・サービスのご質問・資料のご請求はこちらから。">
+<meta property="og:url" content="https://corporate.bizeat.jp/contact.html">
+<meta property="og:image" content="https://corporate.bizeat.jp/assets/hero-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-logo">
+        <img src="assets/logo-icon.svg" alt="" width="24" height="24">
+        <img src="assets/logo-wordmark.svg" alt="BizEat" width="74" height="20">
+      </span>
+      <span class="brand-pill">法人のお客様向け</span>
+    </a>
+
+    <nav class="nav" id="primaryNav" aria-label="メインナビゲーション">
+      <a href="index.html#about">BizEatとは</a>
+      <a href="index.html#features">選ばれる理由</a>
+      <a href="index.html#pricing">料金</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+
+    <div class="header-ctas">
+      <a href="index.html" class="btn btn-secondary btn-sm">← トップページへ戻る</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
+    <a href="index.html#about">BizEatとは</a>
+    <a href="index.html#features">選ばれる理由</a>
+    <a href="index.html#pricing">料金</a>
+    <a href="index.html#faq">FAQ</a>
+    <div class="mobile-nav-ctas">
+      <a href="index.html" class="btn btn-secondary">← トップページへ戻る</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="contact-hero">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">
+          <img src="assets/line.svg" alt="" class="eyebrow-line" width="40" height="2">
+          <span>Contact</span>
+        </div>
+        <h1 class="section-title section-title--center">導入のご相談・お問い合わせ</h1>
+        <p class="section-lead">導入のご相談、サービスのご質問、資料のご請求を、下記フォームより承っております。内容を確認のうえ、担当者よりご連絡いたします。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-body">
+    <div class="container contact-layout">
+
+      <aside class="contact-recap" data-reveal>
+        <h2>BizEat導入の3つの安心</h2>
+        <ul class="contact-recap-list">
+          <li>
+            <span class="request-num">1</span>
+            <span>ご契約は法人会員プランの1種類です。月額料金は1ヶ月のご利用金額で決まり、ご利用のない月も10,000円（税別）のみです。</span>
+          </li>
+          <li>
+            <span class="request-num">2</span>
+            <span>お支払いは月末締め・翌15日払いの請求書払いです。従業員の立替や領収書の精算はありません。</span>
+          </li>
+          <li>
+            <span class="request-num">3</span>
+            <span>導入は4ステップです。大掛かりなシステム開発は不要で、既存の経費精算システムと並行して始められます。</span>
+          </li>
+        </ul>
+        <p class="contact-recap-note">ご利用の条件が固まっている場合は、<a href="https://sales-order.bizeat.jp/contracts/plan/" target="_blank" rel="noopener">法人契約フォーム</a>からそのままお申し込みいただけます。</p>
+      </aside>
+
+      <div class="form-card" id="formPanel" data-reveal data-reveal-delay="100ms">
+        <!-- action の FORMSPREE_FORM_ID は、Formspree で法人向けフォームを作成したあとに実際のIDへ差し替える。
+             差し替え前は contact.js が送信を止め、エラー文を表示する -->
+        <form id="inquiryForm" action="https://formspree.io/f/FORMSPREE_FORM_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="【BizEat 法人向け】お問い合わせがありました">
+          <!-- スパム対策。人には見えない欄で、埋まっていたら Formspree 側が捨てる -->
+          <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="field">
+            <label for="inquiryType">お問い合わせ種別 <span class="req">必須</span></label>
+            <select id="inquiryType" name="inquiryType" required>
+              <option value="" disabled selected>選択してください</option>
+              <option value="導入を検討している">導入を検討している</option>
+              <option value="サービスについて詳しく聞きたい">サービスについて詳しく聞きたい</option>
+              <option value="資料を請求したい">資料を請求したい</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="companyName">会社名 <span class="req">必須</span></label>
+              <input type="text" id="companyName" name="companyName" placeholder="例）株式会社ビズイート" required>
+            </div>
+            <div class="field">
+              <label for="contactName">ご担当者名 <span class="req">必須</span></label>
+              <input type="text" id="contactName" name="contactName" placeholder="例）山田 太郎" required>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">メールアドレス <span class="req">必須</span></label>
+              <input type="email" id="email" name="email" placeholder="example@bizeat.jp" required>
+            </div>
+            <div class="field">
+              <label for="tel">電話番号</label>
+              <input type="tel" id="tel" name="tel" placeholder="03-1234-5678">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="employeeCount">従業員規模</label>
+            <select id="employeeCount" name="employeeCount">
+              <option value="" selected>選択してください（任意）</option>
+              <option value="〜50名">〜50名</option>
+              <option value="51〜100名">51〜100名</option>
+              <option value="101〜300名">101〜300名</option>
+              <option value="301名以上">301名以上</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">ご要望・ご質問</label>
+            <textarea id="message" name="message" rows="4" placeholder="想定されるご利用の頻度や、ご質問などをご記入ください"></textarea>
+          </div>
+
+          <label class="checkbox-field">
+            <input type="checkbox" id="agree" name="agree" required>
+            <span><a href="https://bizeat.jp/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する <span class="req">必須</span></span>
+          </label>
+
+          <p class="form-error" id="formError" role="alert" hidden>送信に失敗しました。時間をおいて再度お試しいただくか、info@bizeat.co.jp までご連絡ください。</p>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitBtn">
+            <span class="btn-label">この内容で送信する</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="form-card thanks-panel" id="thanksPanel" hidden>
+        <div class="thanks-icon" aria-hidden="true">✓</div>
+        <h2>お問い合わせありがとうございます</h2>
+        <p>「<span id="thanksType">お問い合わせ</span>」の内容で承りました。内容を確認のうえ、担当者よりご連絡いたします。</p>
+        <a href="index.html" class="btn btn-secondary btn-lg">トップページへ戻る</a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="assets/logo-icon-white.svg" alt="" width="20" height="20">
+        <img src="assets/logo-wordmark-white.svg" alt="BizEat" width="62" height="17">
+      </div>
+      <address class="footer-address">
+        株式会社ビズイート<br>
+        〒105-0004<br>
+        東京都港区新橋六丁目5番4号401
+      </address>
+    </div>
+
+    <div class="footer-nav-wrap">
+      <button class="footer-nav-toggle" id="footerNavToggle" aria-expanded="false" aria-controls="footerNav" aria-label="フッターメニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="footer-nav" id="footerNav" aria-label="フッターナビゲーション">
+        <a href="index.html">TOP</a>
+        <a href="index.html#about">BizEatとは</a>
+        <a href="index.html#pricing">料金</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="https://bizeat.jp/term-of-service/" target="_blank" rel="noopener">利用規約</a>
+        <a href="https://bizeat.jp/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+        <a href="https://bizeat.jp/" target="_blank" rel="noopener">運営会社</a>
+      </nav>
+    </div>
+
+    <p class="footer-copyright">Copyright © 2026 BizEat Inc.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="ページ上部へ戻る">↑</button>
+
+<script src="script.js"></script>
+<script src="contact.js"></script>
+</body>
+</html>

@@ -486,7 +486,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   flex-shrink: 0;
 }
 .flow-3step-icon img { width: 36px; height: 36px; }
-.flow-3step-card--accent .flow-3step-icon img { width: 44px; height: 44px; }
+/* 中央カードは横長のロゴを置くので、幅だけ決めて縦は成り行きにする（両方固定すると潰れる） */
+.flow-3step-card--accent .flow-3step-icon img { width: 48px; height: auto; }
 
 .flow-3step-body { display: flex; flex-direction: column; gap: 12px; width: 100%; align-items: flex-start; }
 .flow-3step-title { font-size: 24px; font-weight: 600; color: #fff; }

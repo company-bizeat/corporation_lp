@@ -723,17 +723,22 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .faq-cta { background: linear-gradient(165deg, #e6d5b5 0%, #dcc294 40%, #cfb98d 68%, #d9e2b5 100%); padding: 96px 0; }
 .faq-cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
 
-/* PC（FAQが2列のとき）のみ。1080px以下の1列化と重ならないよう 1081px から。見出しを1行目に出し、黒箱を2行目に置いてタブ群と上下を揃える */
+/* PC（FAQが2列のとき）のみ。1080px以下の1列化と重ならないよう 1081px から。
+   .faq-col の枠を消して子を直接グリッドに流すため、**子ごとに置き場所を明示する**。
+   指定を落とすとその子が右列や別の行へ流れる（2026-09-18に英字ラベルと末尾の1文で実際に起きた） */
 @media (min-width: 1081px) {
   .faq-col { display: contents; }
-  .faq-col .section-title,
-  .faq-list { grid-column: 1; }
-  .cta-box { grid-column: 2; grid-row: 2; }
+  .faq-col .eyebrow       { grid-column: 1; grid-row: 1; }
+  .faq-col .section-title { grid-column: 1; grid-row: 2; }
   /* 余白をタブ間隔に配り、最後のタブの下端を黒箱に揃える */
-  .faq-list { justify-content: space-between; }
+  .faq-list               { grid-column: 1; grid-row: 3; justify-content: space-between; }
+  .faq-more               { grid-column: 1; grid-row: 4; }
+  .cta-box                { grid-column: 2; grid-row: 3; }
 }
 
 .faq-col .section-title { margin-bottom: 24px; font-size: 30px; }
+/* FAQ区画は見出しが左寄せなので、英字ラベルも左端に揃える（.eyebrow の既定は中央寄せ） */
+.faq-col .eyebrow { align-items: flex-start; gap: 10px; margin-bottom: 14px; }
 
 .faq-list { display: flex; flex-direction: column; gap: 12px; }
 
@@ -1235,6 +1240,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .compare-table--price .compare-row { grid-template-columns: 1fr auto; gap: 8px; padding: 14px 16px; text-align: left; }
   .compare-table--price .compare-row--head { display: grid; }
   .compare-table--price .compare-label .nobr { display: block; }
+  /* 上限・下限が1つだけの行（40万円以下・400万円超）にも2行ぶんの高さを持たせ、行の高さを揃える */
+  .compare-table--price .compare-label:has(.nobr:only-child)::after { content: ''; display: block; height: 1.45em; }
   .compare-table--price .compare-row:not(.compare-row--head) .compare-label { font-size: 14px; font-weight: 500; color: var(--ink-900); }
   .price-example { padding: 20px; }
 }

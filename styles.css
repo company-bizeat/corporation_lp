@@ -16,7 +16,6 @@
   --green-tint-soft: #ebf0ed;
   --benefit-tint-a: rgba(74, 186, 98, .2);
   --benefit-tint-b: #dbf1e0;
-  --stat-green: #44a864;
   --alert: #e83f25;
   --gold: #c4a25a;
 
@@ -383,13 +382,17 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
    ========================================================================== */
 
 .social-proof { background: linear-gradient(180deg, #f7f2ea 0%, #f2e9d9 100%); padding: 40px 0; }
-.social-proof-title { font-size: 16px; font-weight: 700; color: var(--ink-900); margin-bottom: 16px; }
+/* 見出しとチップの帯は、他の区画と同じ中央寄せにする */
+.social-proof-title { font-size: 16px; font-weight: 700; color: var(--ink-900); margin-bottom: 16px; text-align: center; }
 
 .logo-strip {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   padding-bottom: 2px;
+  /* 3個×2行のまま、器を絞って横長になるのを抑える（一番長い文「1万円以下かどうかの判定が難しい」が1行に収まる幅） */
+  max-width: 820px;
+  margin-inline: auto;
 }
 
 .logo-chip {
@@ -563,7 +566,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 .compare { background: var(--surface); padding: 0 0 96px; }
 .compare-inner { display: flex; align-items: center; gap: 100px; }
-.compare-copy { flex: 0 0 auto; width: 450px; display: flex; flex-direction: column; gap: 24px; }
+/* 左のコピーは左寄せなので、英字ラベルも左端に揃える（.eyebrow の既定は中央寄せ） */
+.compare-copy { flex: 1 1 400px; max-width: 480px; display: flex; flex-direction: column; gap: 24px; }
+.compare-copy .eyebrow { align-items: flex-start; }
 
 .compare-table {
   flex: 1 1 580px;
@@ -601,7 +606,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .compare-row:not(.compare-row--head):nth-of-type(even) { background: var(--surface); }
 .compare-row:not(.compare-row--head) { transition: background-color var(--dur-fast) ease; }
 .compare-row:not(.compare-row--head):hover { background: var(--green-tint); }
-.compare-row span { text-wrap: balance; }
+/* 「会食店か／ら」「会議／費」のような語の途中での折り返しを避ける */
+.compare-row span { text-wrap: balance; word-break: auto-phrase; }
 .compare-label { color: var(--ink-900); }
 .compare-win { color: var(--green-550); font-weight: 700; }   /* 2026-09-17: 警告色の赤からブランドの緑へ。700/600 は本文の黒と見分けにくく、500 は明るすぎたので中間の 550 */
 
@@ -637,7 +643,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 
 .stat-card-label { font-size: 16px; font-weight: 500; color: var(--ink-700); }
 
-.stat-card-number-row { display: flex; align-items: baseline; gap: 2px; color: var(--stat-green); }
+.stat-card-number-row { display: flex; align-items: baseline; gap: 2px; color: var(--green-550); }
 .stat-card-number { font-size: 48px; font-weight: 700; }
 .stat-card-unit { font-size: 20px; font-weight: 500; }
 
@@ -905,7 +911,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   display: grid;
   grid-template-columns: minmax(0, 560px) minmax(0, 1fr);
   gap: 40px;
-  align-items: start;
+  /* 左の料金表と右の試算の枠の高さを揃える（start にすると中身の高さになり、左右で段差が出る） */
+  align-items: stretch;
   margin-top: 48px;
 }
 /* 比較表の見た目を借りて2列にする。1列目の見出し「1ヶ月のご利用金額」は出す（比較表では隠している） */
@@ -916,8 +923,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .compare-table--price .compare-row--head span:last-child { text-align: right; }
 .price-value { text-align: right; font-size: 16px; font-weight: 700; color: var(--ink-900); }
 
-.price-example { background: var(--green-tint); border-radius: var(--r-lg); padding: 24px 28px; }
-.price-example h3 { font-size: 16px; font-weight: 700; line-height: 1.5; color: var(--green-700); margin-bottom: 14px; text-wrap: pretty; }
+.price-example { background: var(--green-tint); border-radius: var(--r-2xl); padding: 24px 28px; }
+/* 料金表と高さを揃えたときに、中身が上に寄らないよう上下中央に置く */
+.pricing-inner > .price-example { display: flex; flex-direction: column; justify-content: center; }
+.price-example h3 { font-size: 16px; font-weight: 700; line-height: 1.5; color: var(--green-700); margin-bottom: 14px; text-wrap: pretty; word-break: auto-phrase; }
 .price-example dl { display: flex; flex-direction: column; gap: 10px; margin: 0; }
 .price-example dl > div { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; font-size: 14px; line-height: 1.6; color: var(--ink-700); }
 .price-example dt { font-weight: 700; color: var(--ink-900); flex: 0 0 auto; }
@@ -947,9 +956,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 /* ---- FAQ の末尾リンク ---- */
 .faq-more { margin-top: 16px; font-size: 13px; color: var(--ink-700); }
 .faq-more a { color: var(--green-700); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-
-/* ---- contact.html の補足文中のリンク ---- */
-.contact-recap-note a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ==========================================================================
    Responsive
@@ -1243,8 +1249,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .compare-table--price .compare-row { grid-template-columns: 1fr auto; gap: 8px; padding: 14px 16px; text-align: left; }
   .compare-table--price .compare-row--head { display: grid; }
   .compare-table--price .compare-label .nobr { display: block; }
-  /* 上限・下限が1つだけの行（40万円以下・400万円超）にも2行ぶんの高さを持たせ、行の高さを揃える */
-  .compare-table--price .compare-label:has(.nobr:only-child)::after { content: ''; display: block; height: 1.45em; }
+  /* 区分が1行の行（40万円以下・400万円超）も2行ぶんの高さにして揃える。
+     以前は :has()+::after で高さを足していたが、区分名だけが上にずれるのでやめた */
+  .compare-table--price .compare-row:not(.compare-row--head) { min-height: 5.1em; align-items: center; }
   .compare-table--price .compare-row:not(.compare-row--head) .compare-label { font-size: 14px; font-weight: 500; color: var(--ink-900); }
   .price-example { padding: 20px; }
 }

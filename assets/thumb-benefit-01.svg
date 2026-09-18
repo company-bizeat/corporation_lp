@@ -1,7 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="150" height="84" viewBox="0 0 150 84" role="img" aria-label="">
-  <!-- 値札の形。文字は「10%〜35% OFF」で、矢印より手前の四角い部分（x 8〜118）に収める。
-       雛形の「¥0」の絵は飲食店向け（掲載料0円）のため差し替え。02・03と同じ 150×84 の比率 -->
-  <path d="M8 14 h110 l26 28 -26 28 h-110 a8 8 0 0 1 -8 -8 v-40 a8 8 0 0 1 8 -8 z" fill="#2c6e49"/>
-  <text x="63" y="41" font-family="Noto Sans JP, Hiragino Sans, sans-serif" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">10%〜35%</text>
-  <text x="63" y="60" font-family="Noto Sans JP, Hiragino Sans, sans-serif" font-size="13" font-weight="700" fill="#dbf1e0" text-anchor="middle" letter-spacing="2">OFF</text>
+  <!-- 値札とコインの絵。文字は入れない（真下の見出しが「10%〜35%OFF」を言っているため二重になる）。
+       カードの地色が淡い緑なので、02・03と同じ「白い面＋中間の緑の線」で描く（淡い緑で塗ると地色に溶ける）。
+       要素は横に並べる（02のカレンダー・盾・コインと同じ置き方） -->
+  <!-- 値札 -->
+  <path d="M10 22 h48 l20 20 -20 20 h-48 a7 7 0 0 1 -7 -7 v-26 a7 7 0 0 1 7 -7 z"
+        fill="#ffffff" stroke="#4bbb63" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="19" cy="42" r="3.6" fill="#4bbb63"/>
+  <rect x="30" y="34" width="30" height="5.5" rx="2.75" fill="#4bbb63"/>
+  <rect x="30" y="45" width="19" height="5.5" rx="2.75" fill="#a9dfb8"/>
+  <!-- コイン2枚（奥は淡く） -->
+  <circle cx="129" cy="46" r="13" fill="#e0f5e5" stroke="#a9dfb8" stroke-width="3"/>
+  <circle cx="108" cy="38" r="13" fill="#ffffff" stroke="#4bbb63" stroke-width="3"/>
+  <path d="M102 38 h12 M108 32 v12" stroke="#4bbb63" stroke-width="2.6" stroke-linecap="round"/>
 </svg>

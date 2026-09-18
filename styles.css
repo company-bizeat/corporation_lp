@@ -414,7 +414,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   color: var(--ink-900);
   transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-fast) ease;
 }
-.logo-chip:hover { transform: translateY(-3px); box-shadow: var(--shadow-raise); border-color: var(--green-600); }
+/* 課題を並べただけで押せないので、ホバーの動きは付けない（2026-09-18） */
 
 /* ==========================================================================
    Section shared
@@ -663,8 +663,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
    Flow steps
    ========================================================================== */
 
-.flow { background: var(--surface); padding: 0 0 96px; }
-.flow .section-head { align-items: flex-start; text-align: left; gap: 16px; }
+/* 上の区画（福利厚生）と背景色が変わる境目に見出しが接しないよう、上に余白を取る */
+.flow { background: var(--surface); padding: 72px 0 96px; }
+.flow .section-head { max-width: 800px; margin-inline: auto; gap: 20px; }
 
 .flow-steps {
   display: flex;
@@ -737,8 +738,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 
 .faq-col .section-title { margin-bottom: 24px; font-size: 30px; }
-/* FAQ区画は見出しが左寄せなので、英字ラベルも左端に揃える（.eyebrow の既定は中央寄せ） */
-.faq-col .eyebrow { align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+/* FAQ区画も他と同じ中央寄せに揃える */
+.faq-col .eyebrow { gap: 10px; margin-bottom: 14px; }
+.faq-col .section-title { text-align: center; }
 
 .faq-list { display: flex; flex-direction: column; gap: 12px; }
 
@@ -923,6 +925,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .price-example strong { color: var(--green-700); }
 .price-example-note { font-size: 12px; line-height: 1.6; color: var(--ink-500); margin-top: 12px; }
 
+/* 注記は表と例の「下」に全幅で置く。右列に入れると表より下へはみ出して不揃いに見える */
+.pricing-inner > .price-notes { grid-column: 1 / -1; margin-top: 28px; }
 .price-notes { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.6; color: var(--ink-700); }
 .price-notes li { position: relative; padding-left: 14px; text-wrap: pretty; }
 .price-notes li::before { content: ''; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--green-600); }
@@ -939,7 +943,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .flow-steps--four .flow-step { flex-basis: 200px; min-width: 0; }
 /* 「10%〜35%」を1行に保つ */
 .stat-card-number { white-space: nowrap; }
-.flow-step-meta { display: block; margin-top: 8px; font-size: 12px; font-weight: 700; color: var(--green-700); }
 
 /* ---- FAQ の末尾リンク ---- */
 .faq-more { margin-top: 16px; font-size: 13px; color: var(--ink-700); }

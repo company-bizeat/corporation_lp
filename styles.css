@@ -947,7 +947,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .welfare .section-head { max-width: 800px; margin-inline: auto; gap: 20px; }
 .welfare .section-lead { max-width: 720px; }
 
-/* ---- 導入の流れを4ステップに（雛形は3）。4段は1240px以下で横に収まらないので、その幅から縦積みにする（下の @media） ---- */
+/* ---- 導入の流れを4ステップに（雛形は3）。4段は1240px以下で余白と文字を詰め、900px以下で縦積みにする（下の @media） ---- */
 .flow-steps--four .flow-step { flex-basis: 200px; min-width: 0; }
 /* 「10%〜35%」を1行に保つ */
 .stat-card-number { white-space: nowrap; }
@@ -1236,11 +1236,15 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .thanks-panel { padding: 40px 20px; }
 }
 
-/* 4段の流れ。横1列だと 1240px 以下で収まらないので縦積みにする（3段用の 900px より早く切り替える） */
-@media (max-width: 1240px) {
-  .flow-steps--four { flex-direction: column; align-items: stretch; gap: 40px; padding: 50px 24px 24px; }
-  .flow-steps--four .flow-step { flex: 1 1 auto; margin-top: 20px; }
-  .flow-steps--four .flow-step-arrow { transform: rotate(90deg); align-self: center; margin-top: 0; }
+/* 4段の流れ。1240px 以下は余白と文字を詰めて横1列を保つ。縦積みは 900px 以下（3段と同じ切り替え幅） */
+@media (max-width: 1240px) and (min-width: 901px) {
+  .flow-steps--four { gap: 8px; padding: 50px 20px 24px; }
+  .flow-steps--four .flow-step { flex: 1 1 0; min-width: 0; padding: 40px 14px 20px; }
+  .flow-steps--four .flow-step h3 { font-size: 17px; }
+  .flow-steps--four .flow-step p { font-size: 13px; }
+}
+@media (max-width: 900px) {
+  .flow-steps--four .flow-step { flex-basis: auto; }   /* 「導入の流れを4ステップに」の 200px は横並び用。縦積みでは高さとして効いてしまうので戻す */
 }
 
 @media (max-width: 640px) {
